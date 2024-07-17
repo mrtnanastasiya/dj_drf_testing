@@ -38,6 +38,7 @@ def test_filter_list_courses_id(client, courses_factory):
     filter_course_id = Course.objects.filter(id=second_course_id).exists()
     assert response.json()['id'] == second_course_id
     assert filter_course_id
+    
 @pytest.mark.django_db
 def test_filter_list_courses_name(client, courses_factory):
     courses = courses_factory(_quantity=5)
